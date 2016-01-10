@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Formatting Data with Filters</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	<body ng-init="customers=[{joined:'2000-12-02', name:'John', city:'Melbourne', orderTotal:9.9956}, {joined:'2016-01-04', name:'Biondi', city:'Surabaya', orderTotal:14.321}, {joined:'2002-07-21', name:'Arvin', city:'Alaska', orderTotal:1.52}, {joined:'2012-03-09', name:'Yoga', city:'Sydney', orderTotal:200.22}]">
+		<div class="container">
+			<h2>Customers</h2>
+			Filter: <input type="text"/>
+
+			<br/>
+			<br/>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>City</th>
+						<th>Order Total</th>
+						<th>Joined</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="cust in customers">
+						<td>{{ cust.name | uppercase }}</td>
+						<td>{{ cust.city | lowercase }}</td>
+						<td>{{ cust.orderTotal | currency:'Y' }}</td>
+						<td>{{ cust.joined | date:'dd MMMM yyyy'}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script type="text/javascript" src="../angular.js"></script>
+	</body>
+</html>
+
