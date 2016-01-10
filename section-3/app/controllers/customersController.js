@@ -46,5 +46,8 @@
 		};
 	};
 
-	angular.module('customersApp').controller('CustomersController', CustomersController);
+	CustomersController.$inject = ['$scope'];
+
+	angular.module('customersApp')
+		.controller('CustomersController', CustomersController);
 }());
