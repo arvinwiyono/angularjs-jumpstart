@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="customersApp">
+	<head>
+		<title>Formatting Data with Filters</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	<body ng-controller="CustomersController">
+		<div class="container">
+			<h2>Customers</h2>
+			Filter: <input type="text" ng-model="customerFilter.name"/>
+
+			<br/>
+			<br/>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th ng-click="doSort('name')">Name</th>
+						<th ng-click="doSort('city')">City</th>
+						<th ng-click="doSort('orderTotal')">Order Total</th>
+						<th ng-click="doSort('joined')">Joined</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse">
+						<td>{{ cust.name | uppercase }}</td>
+						<td>{{ cust.city | lowercase }}</td>
+						<td>{{ cust.orderTotal | currency:'&euro;' }}</td>
+						<td>{{ cust.joined | date:'dd MMMM yyyy'}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<br/>
+			<span>Total customers: {{ customers.length }}</span>
+		</div>
+		<script type="text/javascript" src="../angular.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" src="app/controllers/customersController.js"></script>
+	</body>
+</html>
+
