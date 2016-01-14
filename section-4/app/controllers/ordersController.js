@@ -93,7 +93,7 @@
 					{
 						id: 8,
 						product: 'Trampoline',
-						total: 124.78	
+						total: 125	
 					}
 				]
 			}
