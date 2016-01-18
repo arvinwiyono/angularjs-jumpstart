@@ -5,7 +5,11 @@
 		$scope.reverse = false;
 		$scope.sortBy = 'name';
 
-		$scope.customers = customersFactory.getCustomers();
+		function init(){
+			$scope.customers = customersFactory.getCustomers();
+		};
+
+		init();
 		
 		$scope.doSort = function(propName){
 			$scope.sortBy = propName;
