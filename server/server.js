@@ -7,7 +7,7 @@ var express = require('express'),
 //});
 
 //Express 4
-app.use(express.static(__dirname, '/'));
+app.use(express.static(__dirname + '/'));
 
 app.get('/customers/:id', function(req, res) {
     var customerId = parseInt(req.params.id);
