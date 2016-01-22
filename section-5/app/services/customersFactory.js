@@ -1,24 +1,20 @@
 (function(){
-	var customersFactory = function(staticCustomers){
-		var customers = staticCustomers;
-
-		var factory = {};
+	var customersFactory = function($http){
 		
+		var factory = {};
+	
 		factory.getCustomers = function(){
-			return customers;
+			return $http.get('/customers');
 		};
 
 		factory.getCustomer = function(id){
-			for(var i  = 0; i < customers.length; i++){
-				if(customers[i].id == parseInt(id)){
-					return customers[i];
-				}
-			}
-			return {};
+			return $http.get('/customers/'+ id);
 		};
 
 		return factory;
 	};
+
+	customersFactory.$inject = ['$http'];
 
 	angular.module('customersApp').factory('customersFactory', customersFactory);
 })();
