@@ -9,11 +9,11 @@
 		function init(){
 			// Search the customer with the customerId
 			customersFactory.getCustomer(customerId)
-				.success(function(customer){
+				.then(function(customer){
 					$scope.customer = customer;
-				})
-				.error(function(data, status, headers, config){
+				}, function errorCallback(response){
 					// Handle error
+					$log.log(response.status +' - ' + response.data.error);
 				});
 		};
 
