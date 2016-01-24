@@ -8,7 +8,13 @@
 		// Private function
 		function init(){
 			// Search the customer with the customerId
-			$scope.customer = customersFactory.getCustomer(customerId);
+			customersFactory.getCustomer(customerId)
+				.success(function(customer){
+					$scope.customer = customer;
+				})
+				.error(function(data, status, headers, config){
+					// Handle error
+				});
 		};
 
 		init();

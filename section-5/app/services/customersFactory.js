@@ -4,11 +4,11 @@
 		var factory = {};
 	
 		factory.getCustomers = function(){
-			return $http.get('/customers');
+			return $http.get('http://localhost:3000/customers');
 		};
 
 		factory.getCustomer = function(id){
-			return $http.get('/customers/'+ id);
+			return $http.get('http://localhost:3000/customers/'+ id);
 		};
 
 		return factory;
