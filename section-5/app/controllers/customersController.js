@@ -8,12 +8,14 @@
 		$scope.appSettings = appSettings;
 
 		function init(){
+			// Style #1 - DEPRECATED
 			$scope.customers = customersFactory.getCustomers()
-				.then(function(customers){
+				.success(function(customers){
 					$scope.customers = customers;
-				}, function errorCallback(response){
+				})
+				.error(function (data, status){
 					// Handle error
-					$log.log(response.status +' - ' + response.data.error);
+					$log.log(status +' - ' + data.error);
 				});
 		};
 
