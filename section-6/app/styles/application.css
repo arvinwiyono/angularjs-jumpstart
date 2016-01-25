@@ -1,0 +1,10 @@
+.navbar .navbar-nav, .navbar .navbar-header{
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar{
+	text-align: center;
+	border-radius: 0;
+}
