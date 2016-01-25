@@ -36,7 +36,8 @@ app.get('/orders', function(req, res) {
                 orders.push(customers[i].orders[j]);   
             }
         }
-    }  
+    }
+    res.header("Access-Control-Allow-Origin", "*");
     res.json(orders);
 });
 

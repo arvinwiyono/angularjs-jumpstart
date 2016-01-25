@@ -21,8 +21,8 @@
 
 		    <div class="collapse navbar-collapse" id="myNavbar">
 			    <ul class="nav navbar-nav">
-			    	<li><a href="#/">Customers</a></li>
-			    	<li><a href="#">Orders</a></li>
+			    	<li><a href="#/customers">Customers</a></li>
+			    	<li><a href="#/orders">Orders</a></li>
 			    </ul>	
 		    </div>
 		  </div>
@@ -34,11 +34,19 @@
 		<script type="text/javascript" src="../angular.js"></script>
 		<script type="text/javascript" src="../angular-route.js"></script>
 		<script type="text/javascript" src="app/app.js"></script>
+
+		<!-- Load all controllers -->
 		<script type="text/javascript" src="app/controllers/customersController.js"></script>
 		<script type="text/javascript" src="app/controllers/ordersController.js"></script>
+		<script type="text/javascript" src="app/controllers/allOrdersController.js"></script>
+
+		<!-- Load all services -->
 		<script type="text/javascript" src="app/services/customersFactory.js"></script>
 		<script type="text/javascript" src="app/services/customersService.js"></script>
+		<script type="text/javascript" src="app/services/ordersService.js"></script>
 		<script type="text/javascript" src="app/services/values.js"></script>
+
+		<!-- jQuery + Bootstrap.js -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	</body>

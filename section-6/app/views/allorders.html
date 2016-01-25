@@ -1,0 +1,24 @@
+<h2>{{ appSettings.title }}</h2>
+Filter: <input type="text" ng-model="orderFilter.product"/>
+
+<br/>
+<br/>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Product</th>
+			<th>Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="o in orders | filter:orderFilter | orderBy:'product'">
+			<td>{{ o.product }}</td>
+			<td>{{ o.total | currency }}</td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<span>Total orders: {{ orders.length }}</span>
+<hr/>
+<footer>Version: {{ appSettings.version }}</footer>
