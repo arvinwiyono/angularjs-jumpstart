@@ -6,8 +6,17 @@ var express = require('express'),
 //    app.use(express.static(__dirname, '/'));
 //});
 
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
+}
+
 //Express 4
 app.use(express.static(__dirname + '/'));
+app.use(allowCrossDomain);
 
 app.get('/customers/:id', function(req, res) {
     var customerId = parseInt(req.params.id);
@@ -18,12 +27,10 @@ app.get('/customers/:id', function(req, res) {
            break;
         }
     }  
-    res.header("Access-Control-Allow-Origin", "*");
     res.json(data);
 });
 
 app.get('/customers', function(req, res) {
-    res.header("Access-Control-Allow-Origin", "*");
     res.json(customers);
     // res.json(500, { error: 'An error has occurred!' });
 });
@@ -37,7 +44,6 @@ app.get('/orders', function(req, res) {
             }
         }
     }
-    res.header("Access-Control-Allow-Origin", "*");
     res.json(orders);
 });
 
@@ -50,7 +56,7 @@ app.delete('/customers/:id', function(req, res) {
            data = { status: true };
            break;
         }
-    }  
+    }
     res.json(data);
 });
 
