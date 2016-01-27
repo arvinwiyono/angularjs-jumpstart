@@ -8,3 +8,11 @@
 	text-align: center;
 	border-radius: 0;
 }
+
+.delete{
+	color: red;
+}
+
+.delete:hover{
+	cursor: pointer;
+}

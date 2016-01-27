@@ -11,6 +11,9 @@
 			return $http.get('http://localhost:3000/customers/'+ id);
 		};
 
+		factory.deleteCustomer = function(id){
+			return $http.delete('http://localhost:3000/customers/' + id);
+		}
 		return factory;
 	};
 
