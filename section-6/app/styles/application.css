@@ -16,3 +16,8 @@
 .delete:hover{
 	cursor: pointer;
 }
+
+#totalOrders{
+	font-weight: bold;
+	font-size: 120%;
+}
