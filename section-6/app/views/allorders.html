@@ -19,6 +19,6 @@ Filter: <input type="text" ng-model="orderFilter.product"/>
 	</tbody>
 </table>
 <br/>
-<span>Total orders: {{ orders.length }}</span>
+<span>Total orders: {{ ordersTotal | currency }}</span>
 <hr/>
 <footer>Version: {{ appSettings.version }}</footer>
