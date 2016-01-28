@@ -12,7 +12,7 @@ Filter: <input type="text" ng-model="orderFilter.product"/>
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="o in orders | filter:orderFilter | orderBy:'product'">
+		<tr ng-repeat="o in orders | filter:orderFilter | orderBy:'product'" class="repeat-animation">
 			<td>{{ o.product }}</td>
 			<td>{{ o.total | currency }}</td>
 		</tr>
