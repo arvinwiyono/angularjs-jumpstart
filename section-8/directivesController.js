@@ -35,6 +35,24 @@
 				url: 'index.html'
 			}
 		];
+
+		$scope.changeData = function(){
+			counter++;
+			$scope.customer = {
+				name: 'James',
+				street: counter + ' Cedar Point St.'
+			};
+		};
+
+		$scope.addCustomer = function(name){
+			console.log(name);
+			counter++;
+			$scope.customers.push({
+				name: (name) ? name : 'New Customer ' + counter,
+				street: counter + ' Cedar Point St.',
+				age: counter
+			});
+		};
 	};
 
 	customersController.$inject = ['$scope'];
