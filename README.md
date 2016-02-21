@@ -12,4 +12,4 @@ Udemy tutorial - AngularJS JumpStart with Dan Wahlin
 * **[Section 4](https://github.com/arvinwiyono/angularjs-jumpstart/tree/master/section-4)**: Routing
 * **[Section 5](https://github.com/arvinwiyono/angularjs-jumpstart/tree/master/section-5)**: Factories and Services
 * **[Section 6](https://github.com/arvinwiyono/angularjs-jumpstart/tree/master/section-6)**: UI and Animation
-* **Section 7**: Building Custom Directives
+* **[Section 8](https://github.com/arvinwiyono/angularjs-jumpstart/tree/master/section-8)**: Custom Directives
